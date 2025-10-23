@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monopoly Argentino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/monopoly.css">
+</head>
+<body>
+    <div id="startup-menu" class="modal-overlay visible">
+        <div class="modal setup-modal">
+            <h2>Configurar Partida</h2>
+            
+            <div class="setup-container">
+                <div class="player-setup">
+                    <h3>Jugador 1</h3>
+                    <input type="text" id="p1-name" placeholder="Ingresa tu nombre" value="Jugador 1">
+                    <p>Elige tu ficha:</p>
+                    <div id="emoji-selection-p1" class="emoji-grid"></div>
+                    <p>Elige el color de tu borde:</p>
+                    <input type="color" id="p1-color" value="#ff4d4d">
+                </div>
+
+                <div class="player-setup">
+                    <h3>Jugador 2</h3>
+                    <input type="text" id="p2-name" placeholder="Ingresa tu nombre" value="Jugador 2">
+                    <p>Elige tu ficha:</p>
+                    <div id="emoji-selection-p2" class="emoji-grid"></div>
+                    <p>Elige el color de tu borde:</p>
+                    <input type="color" id="p2-color" value="#4d88ff">
+                </div>
+            </div>
+
+            <button id="start-game-btn" class="start-btn">¡Empezar a Jugar!</button>
+        </div>
+    </div>
+
+    <div class="main-container hidden">
+        <div id="board" class="board">
+            <div class="center-panel">
+                <h1 class="game-title">MONOPOLY</h1>
+                <div id="player-info" class="player-info"></div>
+                <div class="controls">
+                    <div class="dice-container">
+                        <div id="die-1" class="die"></div>
+                        <div id="die-2" class="die"></div>
+                    </div>
+                    <div id="dice-total" class="dice-total"></div>
+                    <button id="roll-dice-btn">🎲 Tirar Dados</button>
+                    <button id="manage-btn">⚙️ Gestionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="purchase-modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <h2 id="modal-property-name">Nombre Propiedad</h2>
+            <p>¿Deseas comprar esta propiedad?</p>
+            <div class="modal-buttons">
+                <button id="modal-buy-btn" class="modal-btn buy">🛒 Comprar por $</button>
+                <button id="modal-pass-btn" class="modal-btn pass">❌ Pasar</button>
+            </div>
+        </div>
+    </div>
+    <div id="info-modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <div id="info-modal-icon" class="modal-icon"></div>
+            <h2 id="info-modal-title">Título del Mensaje</h2>
+            <p id="info-modal-text">Aquí va el texto del mensaje.</p>
+            <div class="modal-buttons">
+                <button id="info-modal-ok-btn" class="modal-btn">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    <div id="jail-modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-icon">⛓️</div>
+            <h2 id="jail-modal-title">¡Estás en la Cárcel!</h2>
+            <p id="jail-modal-text">Elige una opción para intentar salir:</p>
+            <div class="modal-buttons">
+                <button id="jail-pay-btn" class="modal-btn">Pagar $50</button>
+                <button id="jail-roll-btn" class="modal-btn">Tirar Dados (Dobles)</button>
+                <button id="jail-card-btn" class="modal-btn hidden">Usar Tarjeta "Salga Gratis"</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/monopoly.js"></script>
+</body>
+</html>
